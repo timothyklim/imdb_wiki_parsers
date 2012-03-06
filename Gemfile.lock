@@ -1,14 +1,15 @@
 GIT
+  remote: git://github.com/TimothyKlim/imdb.git
+  revision: 2690d4000e30ccdd8d690498edb18a68b405bd4e
+  specs:
+    imdb (0.6.8)
+      nokogiri
+
+GIT
   remote: git://github.com/kenpratt/wikipedia-client.git
   revision: b0008cde490b4165fce211a06bf9032c7d06e4f3
   specs:
     wikipedia-client (1.0.1)
-
-PATH
-  remote: /Users/timothyklim/Development/imdb
-  specs:
-    imdb (0.6.8)
-      nokogiri
 
 GEM
   remote: http://rubygems.org/
