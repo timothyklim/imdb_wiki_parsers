@@ -54,6 +54,17 @@ Poster: #{self.poster})"
   end
 end
 
+def fetch_movie code
+  Imdb::Movie.new code
+rescue Exception => e
+  puts e
+end
+
+def fetch_movie_awards movie
+  movie.awards
+rescue Exception => e
+  puts e
+end
 
 count = 2_241_751
 threads = []
@@ -63,11 +74,18 @@ threads = []
   threads << Thread.new do
     while ((@code += 1) <= count)
       unless Movie.find_by_imdb_code(@code)
-        movie = nil
-        while ((movie = Imdb::Movie.new(@code)) && movie.title.nil?);end
+        awards, movie = nil, nil
+        while ((movie = fetch_movie(@code);
+            awards = fetch_movie_awards(movie)).nil? ||
+            movie.nil? ||
+            movie.title.nil? ||
+            awards.nil?)
+
+          sleep 0.5
+        end
 
         item = Movie.new({
-          awards: movie.awards,
+          awards: awards,
           title: movie.title,
           imdb_code: @code,
           casts: movie.cast_member_ids,

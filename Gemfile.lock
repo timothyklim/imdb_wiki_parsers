@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/kenpratt/wikipedia-client.git
+  revision: b0008cde490b4165fce211a06bf9032c7d06e4f3
+  specs:
+    wikipedia-client (1.0.1)
+
 PATH
   remote: /Users/timothyklim/Development/imdb
   specs:
@@ -35,3 +41,4 @@ DEPENDENCIES
   activerecord (~> 3.2.1)
   imdb!
   mysql2
+  wikipedia-client!
