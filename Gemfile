@@ -10,3 +10,5 @@ end
 git 'git://github.com/TimothyKlim/imdb.git' do
   gem 'imdb'
 end
+
+gem "eventmachine"
