@@ -27,6 +27,8 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.0)
     builder (3.0.0)
+    eventmachine (0.12.10)
+    eventmachine (0.12.10-java)
     i18n (0.6.0)
     multi_json (1.0.4)
     mysql2 (0.3.11)
@@ -40,6 +42,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (~> 3.2.1)
+  eventmachine
   imdb!
   mysql2
   wikipedia-client!
